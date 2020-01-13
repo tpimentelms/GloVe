@@ -37,3 +37,11 @@ build/*
 
 # OS X stuff
 ._*
+
+# Python
+__pycache__
+.vscode/
+
+# Project Specific
+data/
+results/
