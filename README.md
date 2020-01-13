@@ -1,7 +1,6 @@
 ## GloVe: Global Vectors for Word Representation
 
 Repository forked from [Stanford's one](https://github.com/stanfordnlp/GloVe).
-
 Changes were made to make it simpler to train GloVe embeddings on Wikipedia data.
 
 ### Getting the embeddings
@@ -13,14 +12,14 @@ To create glove embeddings for a language use the command:
 ```bash
 $ make -f MakeWiki LANGUAGE=<language>
 ```
-In this command, `<language>` can be any language in Wikipedia for which [spacy tokenizer](https://spacy.io/api/tokenizer) works.
+In this command, `<language>` can be any language in Wikipedia for which [spacy's tokenizer](https://spacy.io/api/tokenizer) works.
 For example, training Portuguese embeddings is done by running:
 ```bash
 $ make -f MakeWiki LANGUAGE=pt
 ```
 
 This command will download the latest wikipedia data for that language, tokenize it and then train GloVe embeddings on it.
-Vectors will be in path `results/<language>/vectors.bin`.
+Vectors will be saved in path `results/<language>/vectors.bin`.
 
 
 ## Original README:
