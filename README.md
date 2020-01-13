@@ -1,5 +1,30 @@
 ## GloVe: Global Vectors for Word Representation
 
+Repository forked from [Stanford's one](https://github.com/stanfordnlp/GloVe).
+
+Changes were made to make it simpler to train GloVe embeddings on Wikipedia data.
+
+### Getting the embeddings
+
+First, make sure you have both `gensim` and `spacy` installed in your python environment.
+
+The file `MakeWiki` and `src/tokenizer.py` were added to simplify the embedding training process.
+To create glove embeddings for a language use the command:
+```bash
+$ make -f MakeWiki LANGUAGE=<language>
+```
+In this command, `<language>` can be any language in Wikipedia for which [spacy tokenizer](https://spacy.io/api/tokenizer) works.
+For example, training Portuguese embeddings is done by running:
+```bash
+$ make -f MakeWiki LANGUAGE=pt
+```
+
+This command will download the latest wikipedia data for that language, tokenize it and then train GloVe embeddings on it.
+Vectors will be in path `results/<language>/vectors.bin`.
+
+
+## Original README:
+
 
 | nearest neighbors of <br/> <em>frog</em> | Litoria             |  Leptodactylidae | Rana | Eleutherodactylus |
 | --- | ------------------------------- | ------------------- | ---------------- | ------------------- |
@@ -12,7 +37,7 @@
 We provide an implementation of the GloVe model for learning word representations, and describe how to download web-dataset vectors or train your own. See the [project page](http://nlp.stanford.edu/projects/glove/) or the [paper](http://nlp.stanford.edu/pubs/glove.pdf) for more information on glove vectors.
 
 ## Download pre-trained word vectors
-The links below contain word vectors obtained from the respective corpora. If you want word vectors trained on massive web datasets, you need only download one of these text files! Pre-trained word vectors are made available under the <a href="http://opendatacommons.org/licenses/pddl/">Public Domain Dedication and License</a>. 
+The links below contain word vectors obtained from the respective corpora. If you want word vectors trained on massive web datasets, you need only download one of these text files! Pre-trained word vectors are made available under the <a href="http://opendatacommons.org/licenses/pddl/">Public Domain Dedication and License</a>.
 <div class="entry">
 <ul style="padding-left:0px; margin-top:0px; margin-bottom:0px">
   <li> Common Crawl (42B tokens, 1.9M vocab, uncased, 300d vectors, 1.75 GB download): <a href="http://nlp.stanford.edu/data/wordvecs/glove.42B.300d.zip">glove.42B.300d.zip</a> </li>
