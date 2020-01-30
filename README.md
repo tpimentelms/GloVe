@@ -5,7 +5,14 @@ Changes were made to make it simpler to train GloVe embeddings on Wikipedia data
 
 ### Getting the embeddings
 
-First, make sure you have both `gensim` and `spacy` installed in your python environment.
+First, make sure you have both `gensim`, `spacy` and `tqdm` installed in your python environment.
+```bash
+$ conda env create -f environment.yml
+```
+Then, install the spcacy parser:
+```bash
+$ python -m spacy download xx_ent_wiki_sm
+```
 
 The file `MakeWiki` and `src/tokenizer.py` were added to simplify the embedding training process.
 To create glove embeddings for a language use the command:
